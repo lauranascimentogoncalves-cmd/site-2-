@@ -1,142 +1,1870 @@
+Claro — vou deixar bem maior e mais completo, com várias seções, visual mais profissional, animações, estatísticas, formas de violência, sinais de alerta, como ajudar, direitos, rede de apoio, FAQ e uma área de emergência.
+
+Crie um index.html no VS Code e substitua pelo código abaixo:
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conscientização e Apoio À Mulher</title>
+
+    <title>Voz Delas | Combate à Violência Contra a Mulher</title>
+
     <style>
-        /* Estilos Globais */
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #f4f9f4;
-            color: #2e3d32;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff9fb;
+            color: #514654;
+            line-height: 1.7;
         }
 
-        /* Cabeçalho */
+        :root {
+            --rosa: #e8a6bd;
+            --rosa-escuro: #c96f91;
+            --rosa-claro: #f9dce6;
+
+            --amarelo: #f5d98b;
+            --amarelo-claro: #fff2c9;
+
+            --azul: #a9dbea;
+            --azul-claro: #e1f4f8;
+            --azul-escuro: #5998ad;
+
+            --roxo: #735b72;
+            --branco: #ffffff;
+            --texto: #514654;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           BARRA SUPERIOR
+        ========================== */
+
+        .topbar {
+            background: #735b72;
+            color: white;
+            padding: 9px 8%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
         header {
-            background-color: #d81b60;
-            color: #fff;
-            padding: 2.5rem 1rem;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+
+            padding: 20px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 3px 20px rgba(80, 50, 70, 0.10);
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        /* Destaque de Emergência */
-        .emergency-banner {
-            background-color: #2e7d32;
-            color: #fff;
-            text-align: center;
-            padding: 1.2rem;
+            color: var(--roxo);
+            font-size: 25px;
             font-weight: bold;
         }
 
-        .emergency-banner span {
-            font-size: 1.3rem;
-            text-decoration: underline;
-            color: #e8f5e9;
+        .logo span {
+            font-size: 35px;
         }
 
-        /* Container Conteúdo */
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
         }
 
-        /* Seções */
-        section {
-            background: #ffffff;
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid #d81b60;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        nav a {
+            font-weight: bold;
+            color: #655466;
+            transition: 0.3s;
         }
 
-        h2 {
-            color: #2e7d32;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #f8bbd0;
-            padding-bottom: 0.5rem;
+        nav a:hover {
+            color: var(--rosa-escuro);
         }
 
-        ul {
-            list-style-type: square;
-            margin-left: 1.5rem;
+        .nav-button {
+            background: var(--rosa);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
         }
 
-        li {
-            margin-bottom: 0.8rem;
+        .nav-button:hover {
+            background: var(--rosa-escuro);
+            color: white;
         }
 
-        li strong {
-            color: #c2185b;
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 700px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 100px 10%;
+
+            background:
+                radial-gradient(circle at 80% 20%, #dff3f8 0 15%, transparent 16%),
+                radial-gradient(circle at 20% 90%, #f9dce6 0 12%, transparent 13%),
+                #fff4dc;
+
+            gap: 60px;
         }
 
-        /* Rodapé */
-        footer {
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            background: var(--rosa-claro);
+            color: var(--rosa-escuro);
+
+            padding: 8px 18px;
+            border-radius: 30px;
+
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--roxo);
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--rosa-escuro);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 620px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-pink {
+            background: var(--rosa-escuro);
+            color: white;
+        }
+
+        .btn-blue {
+            background: var(--azul);
+            color: #385d69;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+        }
+
+        .hero-image {
+            width: 390px;
+            height: 390px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(135deg, #f7c9da, #bce4ef);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 150px;
+
+            box-shadow:
+                20px 20px 0 var(--amarelo),
+                -15px -15px 0 rgba(255,255,255,0.8);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+
+        /* =========================
+           FRASE
+        ========================== */
+
+        .quote {
+            background: var(--rosa-claro);
             text-align: center;
-            padding: 1.5rem;
-            background-color: #1b5e20;
-            color: #fff;
-            margin-top: 2rem;
+            padding: 60px 15%;
         }
+
+        .quote p {
+            font-size: 27px;
+            font-weight: bold;
+            color: var(--roxo);
+        }
+
+
+        /* =========================
+           TÍTULOS
+        ========================== */
+
+        section {
+            padding: 90px 9%;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 55px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--roxo);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+        }
+
+        .line {
+            width: 80px;
+            height: 5px;
+            background: var(--rosa);
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+
+        /* =========================
+           SOBRE
+        ========================== */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            color: var(--rosa-escuro);
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .about-box {
+            background: var(--azul-claro);
+            padding: 40px;
+            border-radius: 30px;
+            border-left: 8px solid var(--azul-escuro);
+        }
+
+        .about-box h3 {
+            color: var(--azul-escuro);
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+
+            box-shadow: 0 8px 25px rgba(90,60,80,0.08);
+
+            transition: 0.3s;
+
+            border-top: 7px solid var(--rosa);
+        }
+
+        .card:nth-child(2),
+        .card:nth-child(5) {
+            border-color: var(--amarelo);
+        }
+
+        .card:nth-child(3),
+        .card:nth-child(6) {
+            border-color: var(--azul);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(90,60,80,0.14);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--roxo);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           TIPOS DE VIOLÊNCIA
+        ========================== */
+
+        .violence {
+            background: #fff1f5;
+        }
+
+
+        /* =========================
+           ESTATÍSTICAS
+        ========================== */
+
+        .statistics {
+            background: var(--azul-claro);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            background: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 25px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 43px;
+            font-weight: bold;
+            color: var(--rosa-escuro);
+        }
+
+        .stat:nth-child(2) .stat-number {
+            color: var(--azul-escuro);
+        }
+
+        .stat:nth-child(3) .stat-number {
+            color: #d0a52e;
+        }
+
+        .stat:nth-child(4) .stat-number {
+            color: var(--roxo);
+        }
+
+
+        /* =========================
+           SINAIS DE ALERTA
+        ========================== */
+
+        .warning {
+            background: #fffdf5;
+        }
+
+        .warning-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .warning-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            background: white;
+            margin-bottom: 18px;
+            padding: 22px 28px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+
+            border-left: 7px solid var(--amarelo);
+        }
+
+        .warning-item span {
+            font-size: 35px;
+        }
+
+
+        /* =========================
+           COMO AJUDAR
+        ========================== */
+
+        .help {
+            background: var(--amarelo-claro);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--rosa);
+            color: white;
+
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .step:nth-child(2) .step-number {
+            background: var(--azul-escuro);
+        }
+
+        .step:nth-child(3) .step-number {
+            background: #d2ac3a;
+        }
+
+        .step:nth-child(4) .step-number {
+            background: var(--roxo);
+        }
+
+
+        /* =========================
+           DIREITOS
+        ========================== */
+
+        .rights {
+            background: white;
+        }
+
+        .rights-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .right-box {
+            padding: 35px;
+            border-radius: 25px;
+            background: var(--rosa-claro);
+        }
+
+        .right-box:nth-child(2) {
+            background: var(--azul-claro);
+        }
+
+        .right-box:nth-child(3) {
+            background: var(--amarelo-claro);
+        }
+
+        .right-box:nth-child(4) {
+            background: #eee5ef;
+        }
+
+        .right-box h3 {
+            color: var(--roxo);
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           REDE DE APOIO
+        ========================== */
+
+        .network {
+            background: #e9f7fa;
+        }
+
+        .network-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .network-card {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .network-card .big-icon {
+            font-size: 50px;
+        }
+
+        .network-card h3 {
+            color: var(--azul-escuro);
+            margin: 15px 0;
+        }
+
+
+        /* =========================
+           FRASE DE IMPACTO
+        ========================== */
+
+        .impact {
+            padding: 100px 15%;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8d2df,
+                    #d8f0f5,
+                    #fff0c5
+                );
+        }
+
+        .impact h2 {
+            font-size: 45px;
+            color: var(--roxo);
+            margin-bottom: 20px;
+        }
+
+        .impact p {
+            font-size: 21px;
+        }
+
+
+        /* =========================
+           FAQ
+        ========================== */
+
+        .faq {
+            background: #fff;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        details {
+            background: #fff7fa;
+            margin-bottom: 15px;
+            padding: 20px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            border: 2px solid #f3d5df;
+        }
+
+        summary {
+            font-weight: bold;
+            color: var(--roxo);
+            font-size: 18px;
+        }
+
+        details p {
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           EMERGÊNCIA
+        ========================== */
+
+        .emergency {
+            background: #f6d6e2;
+            text-align: center;
+        }
+
+        .emergency h2 {
+            font-size: 45px;
+            color: var(--roxo);
+        }
+
+        .emergency p {
+            max-width: 750px;
+            margin: 15px auto;
+        }
+
+        .phone-grid {
+            max-width: 800px;
+            margin: 40px auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .phone {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        .phone strong {
+            display: block;
+            font-size: 50px;
+            color: var(--rosa-escuro);
+        }
+
+        .phone:nth-child(2) strong {
+            color: var(--azul-escuro);
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            background: var(--roxo);
+            color: white;
+            text-align: center;
+            padding: 80px 15%;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--roxo);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #443744;
+            color: white;
+            padding: 60px 9% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            color: var(--rosa);
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            display: block;
+            margin: 8px 0;
+            color: #eee;
+        }
+
+        footer a:hover {
+            color: var(--amarelo);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 25px;
+            text-align: center;
+            color: #ddd;
+        }
+
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 80px 7%;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .network-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 750px) {
+
+            header {
+                position: relative;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 70px 7%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 270px;
+                height: 270px;
+                font-size: 100px;
+                box-shadow: 12px 12px 0 var(--amarelo);
+            }
+
+            .about-grid,
+            .rights-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards,
+            .network-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .section-header h2 {
+                font-size: 34px;
+            }
+
+            .impact h2 {
+                font-size: 34px;
+            }
+
+            .warning-item {
+                align-items: flex-start;
+            }
+        }
+
     </style>
 </head>
+
+
 <body>
 
-    <header>
-        <h1>Todos pelo Fim da Violência contra a Mulher</h1>
-        <p>Informativo, apoio e canais de denúncia</p>
-    </header>
+    <!-- =========================
+         AVISO
+    ========================== -->
 
-    <div class="emergency-banner">
-        Caso esteja em perigo, ligue para a Polícia Militar no <span>190</span> ou para a Central de Atendimento à Mulher no <span>180</span>.
+    <div class="topbar">
+        🌷 Informação e conscientização são ferramentas para combater a violência contra a mulher.
     </div>
 
-    <div class="container">
-        <section>
-            <h2>Sobre a Causa</h2>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <header>
+
+        <a href="#inicio" class="logo">
+            <span>🌷</span>
+            Voz Delas
+        </a>
+
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#violencias">Violências</a>
+            <a href="#alertas">Alertas</a>
+            <a href="#ajuda">Como ajudar</a>
+            <a href="#direitos">Direitos</a>
+            <a href="#emergencia" class="nav-button">
+                Preciso de ajuda
+            </a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <span class="tag">
+                    💗 Respeito • Segurança • Igualdade
+                </span>
+
+                <h1>
+                    Toda mulher merece viver
+                    <span>sem violência.</span>
+                </h1>
+
+                <p>
+                    Este espaço foi criado para informar, conscientizar
+                    e incentivar a busca por apoio em situações de
+                    violência contra a mulher.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#violencias" class="btn btn-pink">
+                        Conheça os tipos
+                    </a>
+
+                    <a href="#ajuda" class="btn btn-blue">
+                        Saiba como ajudar
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+                🌸
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FRASE
+        ========================== -->
+
+        <div class="quote">
+
             <p>
-                A violência contra a mulher é uma violação dos direitos humanos que afeta milhões de pessoas diariamente. 
-                Reconhecer os sinais de abuso e saber onde buscar ajuda são passos fundamentais para quebrar esse ciclo.
+                “Nenhuma forma de violência deve ser considerada normal.”
             </p>
+
+        </div>
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section class="about" id="sobre">
+
+            <div class="section-header">
+
+                <h2>Sobre este projeto</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Informação pode ajudar a reconhecer situações de
+                    violência e incentivar a busca por uma rede de apoio.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <h3>Por que falar sobre isso?</h3>
+
+                    <p>
+                        A violência contra a mulher pode acontecer em
+                        diferentes ambientes e assumir diferentes formas.
+                        Nem sempre ela deixa marcas visíveis.
+                    </p>
+
+                    <p>
+                        Com informação, podemos reconhecer comportamentos
+                        abusivos, apoiar vítimas e contribuir para uma
+                        sociedade mais segura e respeitosa.
+                    </p>
+
+                    <p>
+                        O objetivo deste site é educativo e busca estimular
+                        a conscientização sobre o problema.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>🌷 Uma mensagem importante</h3>
+
+                    <p>
+                        A responsabilidade pela violência é sempre de quem
+                        pratica a violência. A vítima não é culpada pelo
+                        abuso que sofreu.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Pedir ajuda é um ato de coragem. Oferecer apoio
+                        também pode fazer diferença.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section>
-            <h2>Formas de Violência</h2>
-            <p>A violência doméstica e familiar não é apenas física. Ela pode se manifestar de diversas formas:</p>
-            <br>
-            <ul>
-                <li><strong>Física:</strong> Qualquer conduta que ofenda a integridade ou saúde corporal.</li>
-                <li><strong>Psicológica:</strong> Ações que causem dano emocional, diminuição da autoestima ou controle de comportamentos.</li>
-                <li><strong>Sexual:</strong> Presenciar, manter ou participar de relação sexual não desejada mediante coerção ou força.</li>
-                <li><strong>Patrimonial:</strong> Retenção, subtração ou destruição de bens, instrumentos de trabalho ou documentos.</li>
-                <li><strong>Moral:</strong> Calúnia, difamação ou injúria.</li>
-            </ul>
+
+        <!-- =========================
+             TIPOS DE VIOLÊNCIA
+        ========================== -->
+
+        <section class="violence" id="violencias">
+
+            <div class="section-header">
+
+                <h2>Conheça os tipos de violência</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    A violência não acontece somente através de agressões
+                    físicas. Ela pode ocorrer de diversas maneiras.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <div class="card-icon">💔</div>
+
+                    <h3>Violência Física</h3>
+
+                    <p>
+                        Envolve ações que causem dor, lesões ou sofrimento
+                        físico, como empurrões, tapas, socos ou agressões.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🧠</div>
+
+                    <h3>Violência Psicológica</h3>
+
+                    <p>
+                        Pode envolver humilhações, ameaças, manipulação,
+                        isolamento, controle e comportamentos que afetem
+                        a autoestima e o bem-estar emocional.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">💰</div>
+
+                    <h3>Violência Patrimonial</h3>
+
+                    <p>
+                        Inclui controlar, destruir, esconder ou retirar
+                        dinheiro, documentos, objetos ou outros bens.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🗣️</div>
+
+                    <h3>Violência Moral</h3>
+
+                    <p>
+                        Pode incluir insultos, difamações, calúnias e
+                        comportamentos que tenham como objetivo prejudicar
+                        a imagem ou reputação da mulher.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🚫</div>
+
+                    <h3>Violência Sexual</h3>
+
+                    <p>
+                        Ocorre quando a mulher é constrangida ou forçada
+                        a participar de uma situação sexual sem consentimento.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🔒</div>
+
+                    <h3>Controle e Isolamento</h3>
+
+                    <p>
+                        Pode envolver controlar amizades, roupas,
+                        contatos, localização, redes sociais ou decisões
+                        pessoais.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section>
-            <h2>Canais de Ajuda</h2>
-            <ul>
-                <li><strong>Ligue 180:</strong> Central gratuita e confidencial de atendimento à mulher (funciona 24 horas).</li>
-                <li><strong>Ligue 190:</strong> Em casos de emergência ou flagrante delito.</li>
-                <li><strong>Delegacias da Mulher (DEAM):</strong> Atendimento especializado para registro de ocorrência e medidas protetivas.</li>
-            </ul>
+
+        <!-- =========================
+             ESTATÍSTICAS
+        ========================== -->
+
+        <section class="statistics">
+
+            <div class="section-header">
+
+                <h2>Alguns números importantes</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Conhecer os canais de apoio pode ajudar a agir diante
+                    de uma situação de violência.
+                </p>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span class="stat-number">180</span>
+                    Central de Atendimento à Mulher
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">190</span>
+                    Emergência da Polícia Militar
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">24h</span>
+                    Atendimento em situações de emergência
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    Respeito é um direito
+                </div>
+
+            </div>
+
         </section>
+
+
+        <!-- =========================
+             SINAIS DE ALERTA
+        ========================== -->
+
+        <section class="warning" id="alertas">
+
+            <div class="section-header">
+
+                <h2>Sinais de alerta</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Alguns comportamentos podem indicar uma relação
+                    abusiva ou uma situação de violência.
+                </p>
+
+            </div>
+
+
+            <div class="warning-container">
+
+                <div class="warning-item">
+
+                    <span>⚠️</span>
+
+                    <div>
+                        <strong>Controle excessivo</strong>
+
+                        <p>
+                            A pessoa tenta controlar onde a mulher vai,
+                            com quem fala ou o que faz.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="warning-item">
+
+                    <span>📱</span>
+
+                    <div>
+                        <strong>Invasão de privacidade</strong>
+
+                        <p>
+                            Exigir senhas, verificar mensagens ou
+                            monitorar constantemente redes sociais.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="warning-item">
+
+                    <span>😔</span>
+
+                    <div>
+                        <strong>Humilhações frequentes</strong>
+
+                        <p>
+                            Fazer a mulher se sentir inferior, incapaz
+                            ou culpada constantemente.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="warning-item">
+
+                    <span>🚪</span>
+
+                    <div>
+                        <strong>Isolamento</strong>
+
+                        <p>
+                            Tentar afastar a mulher de amigos, familiares
+                            ou outras pessoas de confiança.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="warning-item">
+
+                    <span>💬</span>
+
+                    <div>
+                        <strong>Ameaças</strong>
+
+                        <p>
+                            Ameaçar a mulher, pessoas próximas ou animais
+                            para provocar medo e controle.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="warning-item">
+
+                    <span>💰</span>
+
+                    <div>
+                        <strong>Controle financeiro</strong>
+
+                        <p>
+                            Impedir o acesso ao próprio dinheiro ou
+                            controlar completamente os recursos financeiros.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMO AJUDAR
+        ========================== -->
+
+        <section class="help" id="ajuda">
+
+            <div class="section-header">
+
+                <h2>Como ajudar uma mulher?</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Se alguém próximo estiver passando por uma situação
+                    de violência, algumas atitudes podem ajudar.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+
+                <div class="step">
+
+                    <div class="step-number">1</div>
+
+                    <h3>Escute</h3>
+
+                    <p>
+                        Ouça com atenção e evite julgamentos.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">2</div>
+
+                    <h3>Acredite</h3>
+
+                    <p>
+                        Demonstre que você acredita no relato e que
+                        a violência não é culpa da vítima.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">3</div>
+
+                    <h3>Apoie</h3>
+
+                    <p>
+                        Ajude a pessoa a encontrar uma rede de apoio
+                        segura e serviços especializados.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">4</div>
+
+                    <h3>Respeite</h3>
+
+                    <p>
+                        Respeite o tempo e as decisões da mulher,
+                        evitando colocá-la em situações de risco.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DIREITOS
+        ========================== -->
+
+        <section class="rights" id="direitos">
+
+            <div class="section-header">
+
+                <h2>Direitos e proteção</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Toda mulher tem direito à dignidade, segurança,
+                    liberdade e proteção.
+                </p>
+
+            </div>
+
+
+            <div class="rights-container">
+
+
+                <div class="right-box">
+
+                    <h3>🛡️ Direito à proteção</h3>
+
+                    <p>
+                        Mulheres em situação de violência podem buscar
+                        serviços públicos e especializados de atendimento
+                        e proteção.
+                    </p>
+
+                </div>
+
+
+                <div class="right-box">
+
+                    <h3>⚖️ Direito à justiça</h3>
+
+                    <p>
+                        Situações de violência podem ser comunicadas
+                        às autoridades competentes e encaminhadas para
+                        atendimento adequado.
+                    </p>
+
+                </div>
+
+
+                <div class="right-box">
+
+                    <h3>🏠 Direito à segurança</h3>
+
+                    <p>
+                        Em situações de risco, procure um local seguro
+                        e pessoas de confiança.
+                    </p>
+
+                </div>
+
+
+                <div class="right-box">
+
+                    <h3>💗 Direito ao respeito</h3>
+
+                    <p>
+                        Toda mulher merece ser tratada com respeito,
+                        independentemente de sua situação.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REDE DE APOIO
+        ========================== -->
+
+        <section class="network">
+
+            <div class="section-header">
+
+                <h2>Rede de apoio</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Buscar ajuda pode ser um passo importante.
+                </p>
+
+            </div>
+
+
+            <div class="network-cards">
+
+
+                <div class="network-card">
+
+                    <div class="big-icon">📞</div>
+
+                    <h3>Central 180</h3>
+
+                    <p>
+                        Canal de orientação e atendimento relacionado
+                        à violência contra a mulher.
+                    </p>
+
+                </div>
+
+
+                <div class="network-card">
+
+                    <div class="big-icon">🚔</div>
+
+                    <h3>Polícia</h3>
+
+                    <p>
+                        Em situações de emergência e perigo imediato,
+                        procure ajuda através dos serviços de emergência.
+                    </p>
+
+                </div>
+
+
+                <div class="network-card">
+
+                    <div class="big-icon">🏥</div>
+
+                    <h3>Serviços de saúde</h3>
+
+                    <p>
+                        Unidades de saúde podem oferecer atendimento
+                        e encaminhamento.
+                    </p>
+
+                </div>
+
+
+                <div class="network-card">
+
+                    <div class="big-icon">⚖️</div>
+
+                    <h3>Serviços especializados</h3>
+
+                    <p>
+                        Delegacias, centros de atendimento e outros
+                        serviços podem orientar sobre proteção e direitos.
+                    </p>
+
+                </div>
+
+
+                <div class="network-card">
+
+                    <div class="big-icon">👩‍⚖️</div>
+
+                    <h3>Assistência jurídica</h3>
+
+                    <p>
+                        Procure serviços de orientação jurídica quando
+                        precisar de informações sobre seus direitos.
+                    </p>
+
+                </div>
+
+
+                <div class="network-card">
+
+                    <div class="big-icon">🤝</div>
+
+                    <h3>Pessoas de confiança</h3>
+
+                    <p>
+                        Familiares, amigos e pessoas de confiança podem
+                        fazer parte da rede de apoio.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FRASE DE IMPACTO
+        ========================== -->
+
+        <section class="impact">
+
+            <h2>
+                Você não precisa enfrentar isso sozinha.
+            </h2>
+
+            <p>
+                Informação, acolhimento e uma rede de apoio podem ajudar
+                a construir caminhos mais seguros.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FAQ
+        ========================== -->
+
+        <section class="faq">
+
+            <div class="section-header">
+
+                <h2>Perguntas frequentes</h2>
+
+                <div class="line"></div>
+
+                <p>
+                    Algumas dúvidas comuns sobre violência contra a mulher.
+                </p>
+
+            </div>
+
+
+            <div class="faq-container">
+
+
+                <details>
+
+                    <summary>
+                        O que é violência contra a mulher?
+                    </summary>
+
+                    <p>
+                        É qualquer ação ou comportamento que cause ou possa
+                        causar dano físico, psicológico, sexual, moral ou
+                        patrimonial à mulher.
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        A violência precisa deixar marcas físicas?
+                    </summary>
+
+                    <p>
+                        Não. Violências psicológica, moral, patrimonial e
+                        sexual, por exemplo, podem acontecer sem deixar
+                        marcas físicas visíveis.
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        Como posso ajudar uma amiga?
+                    </summary>
+
+                    <p>
+                        Escute sem julgar, demonstre apoio, respeite as
+                        decisões dela e, quando possível, ajude-a a
+                        encontrar serviços especializados e uma rede
+                        de apoio segura.
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        Pedir ajuda é culpa da vítima?
+                    </summary>
+
+                    <p>
+                        Não. A responsabilidade pela violência pertence
+                        à pessoa que pratica o ato violento.
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        O que fazer em uma emergência?
+                    </summary>
+
+                    <p>
+                        Se houver perigo imediato, procure um local seguro
+                        e acione os serviços de emergência apropriados.
+                    </p>
+
+                </details>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EMERGÊNCIA
+        ========================== -->
+
+        <section class="emergency" id="emergencia">
+
+            <h2>Precisa de ajuda?</h2>
+
+            <p>
+                Se você ou alguém próximo estiver em situação de violência,
+                procure ajuda de forma segura.
+            </p>
+
+
+            <div class="phone-grid">
+
+
+                <div class="phone">
+
+                    <strong>180</strong>
+
+                    <h3>Central de Atendimento à Mulher</h3>
+
+                    <p>
+                        Serviço destinado a orientar e acolher mulheres
+                        em situações relacionadas à violência.
+                    </p>
+
+                </div>
+
+
+                <div class="phone">
+
+                    <strong>190</strong>
+
+                    <h3>Emergência</h3>
+
+                    <p>
+                        Em uma situação de perigo imediato, acione a
+                        Polícia Militar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                ⚠️ Se você estiver em perigo imediato, priorize sua
+                segurança e procure um local seguro.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CTA FINAL
+        ========================== -->
+
+        <section class="cta">
+
+            <h2>
+                Juntas podemos construir uma sociedade mais segura.
+            </h2>
+
+            <p>
+                Combater a violência contra a mulher começa com informação,
+                respeito, educação e apoio.
+            </p>
+
+            <a href="#inicio" class="btn">
+                Voltar ao início ↑
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>🌷 Voz Delas</h3>
+
+                <p>
+                    Projeto educativo de conscientização sobre a violência
+                    contra a mulher.
+                </p>
+
+                <br>
+
+                <p>
+                    Informação • Respeito • Segurança • Igualdade
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Navegação</h3>
+
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#violencias">Tipos de violência</a>
+                <a href="#ajuda">Como ajudar</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Ajuda</h3>
+
+                <a href="#direitos">Direitos</a>
+                <a href="#alertas">Sinais de alerta</a>
+                <a href="#emergencia">Emergência</a>
+                <a href="#faq">Perguntas frequentes</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Voz Delas — Projeto educativo.
+            </p>
+
+            <p>
+                Feito com 💗 para promover respeito e conscientização.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
